@@ -6,13 +6,14 @@ namespace APIProject.Helper
 {
     public class Search : ISearch
     {
-        public ResumeSearch SearchResume(string[] hardSkills, string[] softSkills ,string resumeText)
+        public decimal? GetMatchScore(string[] hardSkills, string[] softSkills ,string resumeText)
         {
-            int totalSkillCount,totalMatchScorePercentage = 0;
+            int totalSkillCount;
             int resumeLength = resumeText.Length;
-
             int totalHardSkillCount = 0;
             int totalSoftSkillCount = 0;
+
+            if (resumeText.Length <= 0) return null;
 
             foreach (var item in hardSkills)
             {
@@ -25,12 +26,7 @@ namespace APIProject.Helper
             }
 
             totalSkillCount = totalHardSkillCount + totalSoftSkillCount;
-            totalMatchScorePercentage = (totalSkillCount * 100) / resumeLength;
-
-            return new ResumeSearch
-            {
-                MatchScore = totalMatchScorePercentage
-            };            
+            return (totalSkillCount * 100)/ resumeLength;     
         }
 
         private int GetResumeMatchCount(string skill, string resumeText)
