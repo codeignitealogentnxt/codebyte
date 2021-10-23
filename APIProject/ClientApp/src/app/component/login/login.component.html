@@ -1,0 +1,32 @@
+<div class="row col-4">
+  <div class="spark-box card-body">
+    <div body="true">
+      <div id="login-access">
+        <h1 class="box-title nxt-page-title">Sign In</h1> 
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Username</label>
+                  <input class="form-control" type="text" name="username" id="username" placeholder="Enter Username" required
+                formControlName="username" maxlength="50">
+                <label class="text-danger" *ngIf="form.controls.username['errorMessage']">{{form.controls.username["errorMessage"]}}</label>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Password</label>
+                  <input class="form-control" type="password" name="password" id="password" placeholder="Enter Password"
+                required formControlName="password" maxlength="50">
+                <label class="text-danger" *ngIf="form.controls.password['errorMessage']">{{form.controls.password["errorMessage"]}}</label>
+              </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-md-12">
+                  <input type="submit" class="btn btn-success cst-lg-btn" value="Login">
+                </div>
+              </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>

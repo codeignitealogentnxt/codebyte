@@ -1,0 +1,78 @@
+<div class="centered-area col-6">
+    <div class="spark-box card-body">
+      <div id="register">
+        <h1 class="box-title nxt-page-title">Add MileStone</h1>
+        <form [formGroup]="form" (ngSubmit)="onadd()">
+          <div class="row">
+            <div class="col-md-6">
+              <label>Milestone Name</label>
+              <input
+                class="form-control"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter Name"
+                formControlName="name"
+                maxlength="50"
+              />
+              <label
+                class="text-danger"
+                *ngIf="form.controls.name['errorMessage']"
+                >{{ form.controls.name["errorMessage"] }}</label
+              >
+            </div>
+            <div class="col-md-6">
+              <label>Planned Date</label>
+           <input class="form-control" type="text" placeholder="MM/DD/YYYY" formControlName="plandate" [owlDateTime]="plandate" [owlDateTimeTrigger]="plandate">
+              <owl-date-time [pickerType]="'calendar'" #plandate ></owl-date-time>
+              
+              <label
+                class="text-danger"
+                *ngIf="form.controls.plandate['errorMessage']"
+                >{{ form.controls.plandate["errorMessage"] }}</label
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Actual Date</label>
+              <input class="form-control" type="text" placeholder="MM/DD/YYYY" formControlName="actualdate" [owlDateTime]="actualdate" [owlDateTimeTrigger]="actualdate">
+              <owl-date-time [pickerType]="'calendar'" #actualdate></owl-date-time>
+
+              <label
+                class="text-danger"
+                *ngIf="form.controls.actualdate['errorMessage']"
+                >{{ form.controls.actualdate["errorMessage"] }}</label
+              >
+            </div>
+            <div class="col-md-6">
+              <label>Comment</label>
+              <input
+                class="form-control"
+                type="text"
+                id="comment"
+                placeholder="Enter Comment"
+                formControlName="comment"
+                maxlength="200"
+              />
+              <label
+                class="text-danger"
+                *ngIf="form.controls.comment['errorMessage']"
+                >{{ form.controls.comment["errorMessage"] }}</label
+              >
+            </div>
+          </div>
+        
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <input
+                type="submit"
+                class="btn btn-success cst-lg-btn"
+                value="Save"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

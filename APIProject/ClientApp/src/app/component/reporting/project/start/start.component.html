@@ -1,0 +1,123 @@
+ <div class="centered-area col-6">
+    <div class="spark-box card-body">
+      <div id="register">
+        <h1 class="box-title nxt-page-title">Add Project</h1>
+        <form [formGroup]="form" (ngSubmit)="onadd()">
+          <div class="row">
+            <div class="col-md-6">
+              <label>Project Name</label>
+              <input
+                class="form-control"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter Name"
+                formControlName="name"
+                maxlength="50"
+              />
+              <label
+                class="text-danger"
+                *ngIf="form.controls.name['errorMessage']"
+                >{{ form.controls.name["errorMessage"] }}</label
+              >
+            </div>
+            <div class="col-md-6">
+              <label>Reosurce Count</label>
+              <input
+                class="form-control"
+                type="number"
+                id="resourcecount"
+                placeholder="Enter Reosurce Count"
+                formControlName="resourcecount"
+                maxlength="50"
+              />
+              <label
+                class="text-danger"
+                *ngIf="form.controls.resourcecount['errorMessage']"
+                >{{ form.controls.resourcecount["errorMessage"] }}</label
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Billed Resource Count</label>
+              <input
+                class="form-control"
+                type="number"
+                id="billedresourcecount"
+                placeholder="Enter Billed Resource Count"
+                formControlName="billedresourcecount"
+                maxlength="50"
+              />
+              <label
+                class="text-danger"
+                *ngIf="form.controls.billedresourcecount['errorMessage']"
+                >{{ form.controls.billedresourcecount["errorMessage"] }}</label
+              >
+            </div>
+            <div class="col-md-6">
+              <label>Client Manager Email</label>
+              <input
+                class="form-control"
+                type="text"
+                id="clientmanageremail"
+                placeholder="Enter Client Manager Email"
+                formControlName="clientmanageremail"
+                maxlength="50"
+              />
+              <label
+                class="text-danger"
+                *ngIf="form.controls.clientmanageremail['errorMessage']"
+                >{{ form.controls.clientmanageremail["errorMessage"] }}</label
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Account Manager Email</label>
+              <input
+                class="form-control"
+                type="text"
+                id="accmanageremail"
+                placeholder="Enter Account Manager Email"
+                formControlName="accmanageremail"
+                maxlength="50"
+              />
+              <label
+                class="text-danger"
+                *ngIf="form.controls.accmanageremail['errorMessage']"
+                >{{ form.controls.accmanageremail["errorMessage"] }}</label
+              >
+            </div>
+            <div class="col-md-6">
+              <label>Project Manager Email</label>
+              <input
+                class="form-control"
+                type="text"
+                name="promanageremail"
+                id="promanageremail"
+                placeholder="Project Manager Email"
+                formControlName="promanageremail"
+                maxlength="50"
+              />
+              <label
+                class="text-danger"
+                *ngIf="form.controls.promanageremail['errorMessage']"
+                >{{ form.controls.promanageremail["errorMessage"] }}</label
+              >
+            </div>
+          </div>
+          
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <input
+                type="submit"
+                class="btn btn-success cst-lg-btn"
+                value="Add Project"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

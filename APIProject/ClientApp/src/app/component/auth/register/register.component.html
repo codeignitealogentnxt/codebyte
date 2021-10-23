@@ -1,0 +1,57 @@
+<div class="row col-6">
+    <div class="spark-box card-body">
+        <div id="register">
+          <h1 class="box-title nxt-page-title">Add User</h1> 
+            <form [formGroup]="form" (ngSubmit)="onRegister()">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>First Name</label>
+                    <input class="form-control" type="text" name="firstname" id="firstname" placeholder="Enter First Name" 
+                  formControlName="firstname" maxlength="50">
+                  <label class="text-danger" *ngIf="form.controls.firstname['errorMessage']">{{form.controls.firstname["errorMessage"]}}</label>
+                </div>
+                <div class="col-md-6">
+                  <label>Last Name</label>
+                  <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Enter Last Name" 
+                formControlName="lastname" maxlength="50">
+                <label class="text-danger" *ngIf="form.controls.lastname['errorMessage']">{{form.controls.lastname["errorMessage"]}}</label>
+              </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Email</label>
+                        <input class="form-control" type="text" name="email" id="email" placeholder="Enter Email" 
+                      formControlName="email" maxlength="50">
+                      <label class="text-danger" *ngIf="form.controls.email['errorMessage']">{{form.controls.email["errorMessage"]}}</label>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Username</label>
+                      <input class="form-control" type="text" name="username" id="username" placeholder="Enter Username" 
+                    formControlName="username" maxlength="50">
+                    <label class="text-danger" *ngIf="form.controls.username['errorMessage']">{{form.controls.username["errorMessage"]}}</label>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Password</label>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Enter Password"
+                      formControlName="password" maxlength="50">
+                      <label class="text-danger" *ngIf="form.controls.password['errorMessage']">{{form.controls.password["errorMessage"]}}</label>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Confirm Password</label>
+                      <input class="form-control" type="password" name="cpassword" id="cpassword" placeholder="Enter Confirm Password"
+                    formControlName="confirmpassword" maxlength="50">
+                    <label class="text-danger" *ngIf="form.controls.confirmpassword['errorMessage']">{{form.controls.confirmpassword["errorMessage"]}}</label>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-md-12">
+                    <input type="submit" class="btn btn-success cst-lg-btn" value="Register">
+                  </div>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  

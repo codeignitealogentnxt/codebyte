@@ -1,0 +1,28 @@
+<!-- main menu--ends -->
+<div class="pull-left mb-2 px-0 mr-3">
+  <aside>
+    <!-- menu -->
+    <div id="MainMenu">
+      <div class="list-group panel">
+        <a id="v-pills-profile-tab" data-toggle="pill" routerLink="/user/register/" routerLinkActive="active"
+           routerLinkActive="active" role="tab" aria-controls="v-pills-profile" aria-selected="false" class="list-group-item list-group-item-success"
+           data-parent="#MainMenu">Add User</a>
+        <a id="v-pills-subsidy-tab" data-toggle="pill" routerLink="/user/client/add" routerLinkActive="active" role="tab"
+           aria-controls="v-pills-subsidy" aria-selected="false" class="list-group-item list-group-item-success"
+           data-parent="#MainMenu">Add Client</a>
+        <a id="v-pills-letter-tab" data-toggle="pill" routerLinkActive="active" role="tab" routerLink="/user/reporting/dashboard"
+           aria-controls="v-pills-letter" aria-selected="true" class="list-group-item list-group-item-success clickable"
+           data-parent="#MainMenu">DashBoard</a>
+           <a id="v-pills-letter-tab" data-toggle="pill" routerLinkActive="active" role="tab" routerLink="/hr"
+           aria-controls="v-pills-letter" aria-selected="true" class="list-group-item list-group-item-success clickable"
+           data-parent="#MainMenu">Upload Job profile</a>           
+        <a id="v-pills-letter-tab" data-toggle="pill" routerLinkActive="active" role="tab"
+           aria-controls="v-pills-letter" aria-selected="true" class="list-group-item list-group-item-success clickable"
+           data-parent="#MainMenu" (click)="onLogout()">Logout</a>
+      </div>
+    </div>
+    <!-- menu ends -->
+    <div class="nav flex-column nav-pills list-group" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    </div>
+  </aside>
+</div>

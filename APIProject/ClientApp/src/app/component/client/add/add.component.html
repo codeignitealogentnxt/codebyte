@@ -1,0 +1,193 @@
+<div class="centered-area col-6">
+  <div class="spark-box card-body">
+    <div id="register">
+      <h1 class="box-title nxt-page-title">Add Client</h1>
+      <form [formGroup]="form" (ngSubmit)="onadd()">
+        <div class="row">
+          <div class="col-md-6">
+            <label>Name</label>
+            <input
+              class="form-control"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter Name"
+              formControlName="name"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.name['errorMessage']"
+              >{{ form.controls.name["errorMessage"] }}</label
+            >
+          </div>
+          <div class="col-md-6">
+            <label>Domain</label>
+            <input
+              class="form-control"
+              type="text"
+              name="domain"
+              id="domain"
+              placeholder="Enter Domain"
+              formControlName="domain"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.domain['errorMessage']"
+              >{{ form.controls.domain["errorMessage"] }}</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Email</label>
+            <input
+              class="form-control"
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter Email"
+              formControlName="email"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.email['errorMessage']"
+              >{{ form.controls.email["errorMessage"] }}</label
+            >
+          </div>
+          <div class="col-md-6">
+            <label>Phone</label>
+            <input
+              class="form-control"
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Enter Phone"
+              formControlName="phone"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.phone['errorMessage']"
+              >{{ form.controls.phone["errorMessage"] }}</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Address1</label>
+            <input
+              class="form-control"
+              type="text"
+              name="address1"
+              id="address1"
+              placeholder="Enter Address1"
+              formControlName="address1"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.address1['errorMessage']"
+              >{{ form.controls.address1["errorMessage"] }}</label
+            >
+          </div>
+          <div class="col-md-6">
+            <label>Address2 (Optional)</label>
+            <input
+              class="form-control"
+              type="text"
+              name="address2"
+              id="address2"
+              placeholder="Enter Address 2"
+              formControlName="address2"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.address2['errorMessage']"
+              >{{ form.controls.address2["errorMessage"] }}</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>City</label>
+            <input
+              class="form-control"
+              type="text"
+              name="city"
+              id="city"
+              placeholder="Enter City"
+              formControlName="city"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.city['errorMessage']"
+              >{{ form.controls.city["errorMessage"] }}</label
+            >
+          </div>
+          <div class="col-md-6">
+            <label>State</label>
+            <input
+              class="form-control"
+              type="text"
+              name="state"
+              id="state"
+              placeholder="Enter State"
+              formControlName="state"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.state['errorMessage']"
+              >{{ form.controls.state["errorMessage"] }}</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Pin</label>
+            <input
+              class="form-control"
+              type="text"
+              name="pincode"
+              id="pincode"
+              placeholder="Enter Zip Code"
+              formControlName="pincode"
+              maxlength="50"
+            />
+            <label
+              class="text-danger"
+              *ngIf="form.controls.pincode['errorMessage']"
+              >{{ form.controls.pincode["errorMessage"] }}</label
+            >
+          </div>
+          <div class="col-md-6">
+            <label>Country</label>
+            <select id="inputState" class="form-control mb-2" formControlName="countryId" [ngModelOptions]="{standalone: true}">
+                <option value=0 disabled selected="">Select Country</option>
+                <option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</option>
+              </select>
+            <label
+              class="text-danger"
+              *ngIf="form.controls.countryId['errorMessage']"
+              >{{ form.controls.countryId["errorMessage"] }}</label
+            >
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <input
+              type="submit"
+              class="btn btn-success cst-lg-btn"
+              value="Add Client"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
