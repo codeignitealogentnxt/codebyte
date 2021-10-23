@@ -25,7 +25,7 @@ export class UploadService {
   public send(form: any): any{
     this._lockerService.set('isIgonre', true, 1);
     return this.httpClient
-      .post(this.actionUrl + '/Upload', form)
+      .post(this.actionUrl + '/Client/Upload', form)
       .pipe(map((response: Response) => { this.onSuccess(); return response }))
       .pipe(catchError(this.handleError));
   }

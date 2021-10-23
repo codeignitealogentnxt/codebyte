@@ -15,6 +15,7 @@ using Serilog;
 using ServiceProject;
 using System.Net;
 using DataRepository;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace APIProject
 {
@@ -38,6 +39,11 @@ namespace APIProject
                 configuration.RootPath = "ClientApp/dist";
             });
             ResolveDependency(services);
+            services.Configure<FormOptions>(o => {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit = int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
+            });
             services.AddSwaggerDocument();
             services.AddDbContext<ProjectContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }

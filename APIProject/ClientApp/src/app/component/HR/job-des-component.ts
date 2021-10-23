@@ -7,8 +7,7 @@ import { LockerService } from 'src/app/shared/services';
 
 @Component({
   selector: 'app-job-description',
-  templateUrl: './job-description.component.html',
-  styleUrls: ['./job-description.component.scss']
+  templateUrl: './job-des-component.html'
 })
 export class JobDesComponent extends AppComponentBase implements OnInit {
   subscriptions: any[] = [];                      // stores all service subscription

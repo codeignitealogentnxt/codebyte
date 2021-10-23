@@ -25,7 +25,7 @@ namespace APIProject.Controllers
         #region Upload  
         [Route("Upload")]
         [HttpPost(nameof(Upload))]
-        public IActionResult Upload(IFormFile file)
+        public IActionResult Upload()
         {
             try
             {

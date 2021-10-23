@@ -7,11 +7,12 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { UploadJDComponent } from './upload-jd-component';
 import { FileUploadComponent } from './file-upload-component';
 import { UploadService } from './upload.service';
+import {JobDesComponent} from './job-des-component'
 
 
 
 @NgModule({
-  declarations: [UploadJDComponent,FileUploadComponent],
+  declarations: [UploadJDComponent,FileUploadComponent,JobDesComponent],
   imports: [
     CommonModule,
     HRRoutingModule,

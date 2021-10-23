@@ -20,8 +20,29 @@ namespace APIProject.Controllers
             _clientService = clientService;
         }
 
-        // POST api/<ClientController>
-        [Route("add")]
+        [Route("Upload")]
+        [HttpPost(nameof(Upload))]
+        public IActionResult Upload()
+        {
+            try
+            {
+                var files = Enumerable.Range(0, Request.Form.Files.Count);
+                //.Select(f => Request.Form.Files[f]).ToList();
+                //string subDirectory = "UploadedFiles";
+                //_fileService.UploadFile(files, subDirectory);
+                return Ok();
+                //new { files.Count, Size = _fileService.SizeConverter(files.Sum(f => f.Length)) }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+    // POST api/<ClientController>
+    [Route("add")]
         [HttpPost]
         public IActionResult Add([FromBody] ClientModel clientModel)
         {
