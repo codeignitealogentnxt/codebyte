@@ -40,8 +40,7 @@ namespace APIProject.Controllers
 
                 if (matchScore >= jobDescription.MinimumWeight)
                 {
-                    _matchedCandidateResume.Add(new ResumeSearch { 
-                    
+                    _matchedCandidateResume.Add(new ResumeSearch {                     
                         CandidateId= item.ID,
                         CandidateResumeFileName = item.FileName,
                         CandidateResumeFilePath = item.FilePath,
@@ -52,7 +51,6 @@ namespace APIProject.Controllers
             }
 
             var matches = _matchedCandidateResume.OrderByDescending(i => i.MatchScore);
-
             return Ok(matches);
         }
 

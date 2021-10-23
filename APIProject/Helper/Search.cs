@@ -9,7 +9,7 @@ namespace APIProject.Helper
         public decimal? GetMatchScore(string[] hardSkills, string[] softSkills ,string resumeText)
         {
             int totalSkillCount;
-            int resumeLength = resumeText.Length;
+            int resumeWordLength = resumeText.Split(" ").Length;
             int totalHardSkillCount = 0;
             int totalSoftSkillCount = 0;
 
@@ -26,7 +26,7 @@ namespace APIProject.Helper
             }
 
             totalSkillCount = totalHardSkillCount + totalSoftSkillCount;
-            return (totalSkillCount * 100)/ resumeLength;     
+            return (totalSkillCount * 100)/ resumeWordLength;     
         }
 
         private int GetResumeMatchCount(string skill, string resumeText)
