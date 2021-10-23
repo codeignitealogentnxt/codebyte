@@ -5,6 +5,6 @@ namespace APIProject.Helper
 {
     public interface ISearch
     {
-        decimal? GetMatchScore(string[] hardSkills, string[] softSkills, string resumeText);
+        MatchResult GetMatchScore(string[] hardSkills, string[] softSkills, string resumeText);
     }
 }

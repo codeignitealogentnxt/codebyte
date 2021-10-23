@@ -35,17 +35,19 @@ namespace APIProject.Controllers
 
             foreach (var item in candidates)
             {
-                decimal? matchScore = search.GetMatchScore(jobDescription.HardSkills.Split(','), jobDescription.SoftSkills.Split(','), item.ResumeText);
-                if (matchScore == null) continue;
+                MatchResult results = search.GetMatchScore(jobDescription.HardSkills.Split(','), jobDescription.SoftSkills.Split(','), item.ResumeText);
+                if (results == null) continue;
 
-                if (matchScore >= jobDescription.MinimumWeight)
+                if (results.TotalMatchPercentage >= jobDescription.MinimumWeight)
                 {
                     _matchedCandidateResume.Add(new ResumeSearch {                     
                         CandidateId= item.ID,
                         CandidateResumeFileName = item.FileName,
                         CandidateResumeFilePath = item.FilePath,
                         JobDescriptionId = item.ID,
-                        MatchScore = matchScore                    
+                        TotalHardSkillMatchScore =results.HardSkillMatchPercentage,
+                        TotalSoftSkillMatchScore =results.SoftSkillMatchPercentage,
+                        TotalMatchScore = results.TotalMatchPercentage             
                     });
                 }
             }

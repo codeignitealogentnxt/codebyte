@@ -6,12 +6,10 @@ namespace APIProject.Helper
 {
     public class Search : ISearch
     {
-        public decimal? GetMatchScore(string[] hardSkills, string[] softSkills ,string resumeText)
+        public MatchResult GetMatchScore(string[] hardSkills, string[] softSkills ,string resumeText)
         {
-            int totalSkillCount;
-            int resumeWordLength = resumeText.Split(" ").Length;
-            int totalHardSkillCount = 0;
-            int totalSoftSkillCount = 0;
+            int totalHardSkillCount = 0, totalSoftSkillCount = 0;
+            int resumeWordLength = resumeText.Trim().Split(" ").Length;
 
             if (resumeText.Length <= 0) return null;
 
@@ -25,8 +23,12 @@ namespace APIProject.Helper
                 totalSoftSkillCount += GetResumeMatchCount(item, resumeText);
             }
 
-            totalSkillCount = totalHardSkillCount + totalSoftSkillCount;
-            return (totalSkillCount * 100)/ resumeWordLength;     
+            return new MatchResult
+            {
+                HardSkillMatchPercentage = Math.Round((decimal)((totalHardSkillCount * 100) / resumeWordLength), 2),
+                SoftSkillMatchPercentage = Math.Round((decimal)(totalSoftSkillCount * 100) / resumeWordLength, 2),
+                TotalMatchPercentage = Math.Round((decimal)((totalHardSkillCount + totalSoftSkillCount) * 100) / resumeWordLength, 2)
+            };
         }
 
         private int GetResumeMatchCount(string skill, string resumeText)

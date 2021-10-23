@@ -5,10 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HRRoutingModule } from './hr-routing.module';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { UploadJDComponent } from './upload-jd-component';
+import { FileUploadComponent } from './file-upload-component';
+import { UploadService } from './upload.service';
+
 
 
 @NgModule({
-  declarations: [UploadJDComponent],
+  declarations: [UploadJDComponent,FileUploadComponent],
   imports: [
     CommonModule,
     HRRoutingModule,
@@ -16,7 +19,8 @@ import { UploadJDComponent } from './upload-jd-component';
     ReactiveFormsModule,
     RxReactiveFormsModule,
     OwlDateTimeModule,
-    OwlNativeDateTimeModule,
+    OwlNativeDateTimeModule
   ]
 })
 export class HRModule { }
+
