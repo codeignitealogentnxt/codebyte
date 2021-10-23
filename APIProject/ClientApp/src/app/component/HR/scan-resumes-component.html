@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-body">
+      <!-- form starts -->
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <!-- table head starts -->
+          <thead>
+            <tr>
+              <th colspan="4">
+                <a id="v-pills-letter-tab" data-toggle="pill" routerLinkActive="active" role="tab" routerLink="upload-jd"
+                aria-controls="v-pills-letter" aria-selected="true" 
+                data-parent="#MainMenu"><< Back</a>
+                Scan Resumes
+              </th>
+  
+            </tr>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Skillsets weightage</th>
+              <th scope="col">Expierence weightage</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <!-- table head ends -->
+          <!-- table body starts  -->
+          <tbody>
+            <tr *ngFor="let projectata of projectList let i = index;">
+              <td>{{projectata.parentname}}</td>
+              <td>{{projectata.childname}}</td>
+              <td><a class="text-active">VIEW</a></td>
+              <td>
+                <a class="text-active" (click)="openModal('withdraw', parentdata)">projectata</a>
+              </td>
+            </tr>
+          </tbody>
+          <!-- table body ends -->
+        </table>
+  
+        <div *ngIf="projectList && projectList.length<=0">
+          No record found.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 

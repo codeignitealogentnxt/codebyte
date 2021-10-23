@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-body">
+      <!-- form starts -->
+    <h1>Client Listing</h1>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <!-- table head starts -->
+          <thead>
+            <tr>
+              <th scope="col">Client Name</th>
+              <th scope="col">Domain</th>
+              <th scope="col">Phone Number</th>
+            </tr>
+          </thead>
+          <!-- table head ends -->
+          <!-- table body starts  -->
+          <tbody>
+            <tr *ngFor="let clienttata of clientList let i = index;">
+              <td>{{clienttata.name}}</td>
+              <td>{{clienttata.domain}}</td>
+              <td>{{clienttata.phone}}</td>
+            </tr>
+          </tbody>
+          <!-- table body ends -->
+        </table>
+  
+        <div *ngIf="clientList && clientList.length<=0">
+          No record found.
+        </div>
+      </div>
+    </div>
+  </div>
+  

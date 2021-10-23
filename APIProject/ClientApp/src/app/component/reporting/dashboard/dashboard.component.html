@@ -1,0 +1,195 @@
+<div class="card">
+  <div class="card-body">
+    <!-- form starts -->
+    <h2>Weekly Status Dashboard</h2>
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-3 pr-0">
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col" colspan="4">Project State</th>
+              </tr>
+              <tr>
+                <th scope="col" colspan="2">Last Week</th>
+                <th scope="col" colspan="2">Current Week</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Timeline</td>
+                <td>-</td>
+                <td>Timeline</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Quality</td>
+                <td>-</td>
+                <td>Quality</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Customer</td>
+                <td>-</td>
+                <td>Customer</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Resources</td>
+                <td>-</td>
+                <td>Resources</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover table-bordered table-striped">
+            <!-- table head starts -->
+            <thead>
+              <tr>
+                <th scope="col" colspan="4">Milestone/ sprint</th>
+              </tr>
+              <tr>
+                <th scope="col">Milestone</th>
+                <th scope="col">Planned Date</th>
+                <th scope="col">Actual Date</th>
+                <th scope="col">Comments</th>
+              </tr>
+            </thead>
+            <!-- table head ends -->
+            <!-- table body starts  -->
+            <tbody *ngIf="milestoneList && milestoneList.length > 0">
+              <tr *ngFor="let milestone of milestoneList;let i = index;">
+                <td>{{milestone.parentname}}</td>
+                <td>{{milestone.childname}}</td>
+                <td><a class="text-active">VIEW</a></td>
+                <td>
+                  <a class="text-active">Data</a>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td colspan="4">
+                  <div *ngIf="milestoneList && milestoneList.length<=0">
+                    No record found.
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <!-- table body ends -->
+          </table>
+
+
+        </div>
+      </div>
+      <div class="col-md-3 pl-0">
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col" colspan="2">Resource Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Previous Count</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>Current Count</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Previous Billable</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>Current Billable</td>
+                <td>8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 pr-0">
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Achievements</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No achievements</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Updates and Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No updates</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 pr-0">
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Activities in Current Week</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No activities</td>
+                <td>--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Activities in Next Week</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No activities</td>
+                <td>--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

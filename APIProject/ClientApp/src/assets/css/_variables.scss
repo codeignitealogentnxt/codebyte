@@ -1,0 +1,104 @@
+// ------ spark Variables ------
+
+// Colors
+$spark-primary: #19b422 !default;
+$spark-secondary: #0052ff !default;
+$spark-interactive: $spark-primary !default;
+
+$spark-danger: #d42918 !default;
+$spark-warning: #f5a623 !default;
+$spark-success: #29a745 !default;
+
+$spark-gray-50: #fbfbfc !default;
+$spark-gray-100: #f7f8f8 !default;
+$spark-gray-200: #e7e7e8 !default;
+$spark-gray-300: #cccdcf !default;
+$spark-gray-400: #a8aaab !default;
+$spark-gray-500: #7e7f80 !default;
+$spark-gray-600: #545556 !default;
+$spark-gray-700: #303131 !default;
+$spark-gray-800: #161717 !default;
+$spark-gray-900: #070707 !default;
+
+$spark-gray-lighter: $spark-gray-100 !default;
+$spark-gray-light: $spark-gray-400 !default;
+$spark-gray: $spark-gray-500 !default;
+$spark-gray-dark: $spark-gray-700 !default;
+$spark-gray-darker: $spark-gray-800 !default;
+
+$spark-black: #000;
+$spark-white: #fff;
+
+$spark-gradient-light: linear-gradient(134deg, #e2f6f3 0%, #e7f9e4 100%) !default;
+$spark-gradient-vibrant: linear-gradient(
+  143deg,
+  #408688 0%,
+  #3f745c 100%
+) !default;
+
+$size-1: 8px;
+$size-2: 16px;
+$size-3: 24px;
+$size-half: 4px;
+$size-quarter: 2px;
+
+$text-tiny: 10px;
+$text-small: 14px;
+
+$spark-interactive-light: lighten(
+  desaturate($spark-interactive, 30%),
+  30%
+) !default;
+
+// ------ Customizing Boostrap Variables for spark ------
+
+// Fonts
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: 2.986rem !default;
+$font-size-sm: 0.833rem !default;
+$small-font-size: 0.833rem !default;
+
+$h1-font-size: 2.88rem !default;
+$h2-font-size: 2.074rem !default;
+$h3-font-size: 1.728rem !default;
+$h4-font-size: 1.44rem !default;
+$h5-font-size: 1.2rem !default;
+$h6-font-size: 1rem !default;
+
+// Assign spark color system to Bootstrap
+// Client installations will not override this functionality, but rather override spark variable defaults.
+$primary: $spark-interactive;
+$secondary: $spark-secondary;
+$danger: $spark-danger;
+$success: $spark-success;
+$warning: $spark-warning;
+//TODO: Light? Dark? Info?
+
+// Reset
+$body-bg: $spark-gray-200 !default;
+
+// Card
+$card-border-width: 0;
+$card-border-radius: $size-1;
+$card-spacer-x: $size-2;
+$card-spacer-y: $size-2;
+
+$alert-border-radius: 0px;
+$alert-bg-level: 0;
+$alert-border-level: 0;
+$alert-color-level: -10;
+
+// Badge (Tag)
+$badge-font-size: $text-small;
+$badge-padding-x: $size-2;
+$badge-pill-padding-x: $size-2;
+$badge-padding-y: $size-half;
+$badge-font-weight: normal;
+
+// Progress Bar
+$progress-border-radius: 100px;
+
+// Switch
+$custom-switch-width: 3.2rem;
+$custom-switch-indicator-border-radius: 3.6rem;
+$custom-control-indicator-size: 1.8rem;

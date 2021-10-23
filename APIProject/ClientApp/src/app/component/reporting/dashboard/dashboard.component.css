@@ -1,0 +1,15 @@
+.p0 {
+    padding:0;
+}
+
+.pr-0 {
+    padding-right:0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.table-bordered thead th, .table-bordered thead td, .table-bordered tbody th, .table-bordered tbody td {
+  padding: 5px;
+}
