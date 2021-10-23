@@ -1,12 +1,12 @@
-﻿using DataRepository.Abstraction;
+﻿using DataRepository;
 using ProjectDB.DBModel;
-using ServiceProject.Abstraction;
+using ServiceProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ServiceProject.Implementation
+namespace ServiceProject
 {
     public class CandidateService : ICandidateService
     {
