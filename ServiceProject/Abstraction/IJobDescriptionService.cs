@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ServiceProject.Abstraction
+namespace ServiceProject
 {
     public interface IJobDescriptionService
     {

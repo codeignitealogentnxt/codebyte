@@ -124,6 +124,9 @@ namespace APIProject
             services.AddScoped<IWorkAccomplishedService, WorkAccomplishedService>();
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IClientService, ClientService>();
+            services.AddScoped<IJobDescriptionService, JobDescriptionService>();
+            services.AddScoped<ICandidateService, CandidateService>();
+            services.AddScoped<ISearch, Search>();
 
 
             //repository dependency
@@ -137,6 +140,8 @@ namespace APIProject
             services.AddScoped<ITeamCompositionRepository, TeamCompositionRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IWorkAccomplishedRepository, WorkAccomplishedRepository>();
+            services.AddScoped<IJobDescriptionRepository, JobDescriptionRepository>();
+            services.AddScoped<ICandidateRepository, CandidateRepository>();
         }
     }
 }

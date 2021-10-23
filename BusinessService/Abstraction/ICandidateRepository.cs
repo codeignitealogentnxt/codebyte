@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataRepository.Abstraction
+namespace DataRepository
 {
     public interface ICandidateRepository : IBaseRepository<Candidates>
     {
