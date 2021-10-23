@@ -52,7 +52,6 @@ namespace APIProject.Controllers
             }
 
             var matches = _matchedCandidateResume.OrderByDescending(i => i.MatchScore);
-
             return Ok(matches);
         }
 
