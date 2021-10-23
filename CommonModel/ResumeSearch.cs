@@ -8,7 +8,5 @@ namespace CommonModel
         public string CandidateResumeFileName { get; set; }
         public string CandidateResumeFilePath { get; set; }
         public decimal MatchScore { get; set; }
-
-
     }
 }

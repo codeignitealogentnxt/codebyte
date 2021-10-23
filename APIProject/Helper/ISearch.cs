@@ -5,6 +5,6 @@ namespace APIProject.Helper
 {
     public interface ISearch
     {
-        ResumeSearch SearchPattern(string hardSkills, string softSkills, string resumeText);
+        ResumeSearch SearchResume(string[] hardSkills, string[] softSkills, string resumeText);
     }
 }

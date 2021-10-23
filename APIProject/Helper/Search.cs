@@ -1,34 +1,41 @@
 ﻿using CommonModel;
 using System;
+using System.Text.RegularExpressions;
 
 namespace APIProject.Helper
 {
     public class Search : ISearch
     {
-        public ResumeSearch SearchPattern(string hardSkills, string softSkills,string resumeText)
+        public ResumeSearch SearchResume(string[] hardSkills, string[] softSkills ,string resumeText)
         {
-            return null;
-            //var arrHardSkills = hardSkills.Split(',');
-            //var arrsoftSkills = softSkills.Split(',');
+            int totalSkillCount,totalMatchScorePercentage = 0;
+            int resumeLength = resumeText.Length;
 
-            //int M = pat.Length;
-            //int resumeLength = resumeText.Length;
+            int totalHardSkillCount = 0;
+            int totalSoftSkillCount = 0;
 
-            ///* A loop to slide pat one by one */
-            //for (int i = 0; i <= resumeLength - M; i++)
-            //{
-            //    int j;
+            foreach (var item in hardSkills)
+            {
+                totalHardSkillCount += GetResumeMatchCount(item, resumeText);
+            }
 
-            //    /* For current index i, check for pattern
-            //    match */
-            //    for (j = 0; j < M; j++)
-            //        if (txt[i + j] != pat[j])
-            //            break;
+            foreach (var item in softSkills)
+            {
+                totalSoftSkillCount += GetResumeMatchCount(item, resumeText);
+            }
 
-            //    // if pat[0...M-1] = txt[i, i+1, ...i+M-1]
-            //    if (j == M)
-            //        Console.WriteLine("Pattern found at index " + i);
-            //}
+            totalSkillCount = totalHardSkillCount + totalSoftSkillCount;
+            totalMatchScorePercentage = (totalSkillCount * 100) / resumeLength;
+
+            return new ResumeSearch
+            {
+                MatchScore = totalMatchScorePercentage
+            };            
         }
-    }
+
+        private int GetResumeMatchCount(string skill, string resumeText)
+        {
+            return Regex.Matches(resumeText, skill).Count;
+        }
+    }    
 }
