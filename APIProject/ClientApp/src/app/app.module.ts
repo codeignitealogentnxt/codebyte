@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './component/common/not-found/not-found.component';
 import { Maintemplate } from './templates/main/main.template';
 import { AccessTemplate } from './templates/access/access.template';
-
+import {UploadService} from './component/HR/upload.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,7 @@ import { AccessTemplate } from './templates/access/access.template';
       preventDuplicates: true,
     }),
   ],
-  providers: [Configuration],
+  providers: [Configuration,UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

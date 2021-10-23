@@ -1,0 +1,71 @@
+<div class="col-6">
+    <div class="spark-box card-body">
+      <div id="job" class="col-12">
+        <h1 class="box-title nxt-page-title">Job Description</h1>
+        <form (ngSubmit)="onadd()">  
+          <div class="row">
+            <div class="w-100">
+              <label>Attachments
+                <div>
+                  <label class="btn btn-dark">
+                    <input
+                      type="file"
+                      style="display: none"
+                      #file
+                      multiple
+                      (change)="uploadFiles(file.files)"
+                      accept=".txt, .pdf, .jpg, .png"
+                    />
+                    Choose File
+                  </label>
+                  <span class="label label-info ml-2 text-gray">
+                    <ng-container *ngIf="attachments && attachments.length; else noAttachments"
+                      >{{ attachments.length }}
+                      files
+                    </ng-container>
+                    <ng-template #noAttachments>{{ 'No file chosen' }}</ng-template>
+                  </span>
+                </div>
+              </label>
+              <div class="adl-label notes">Note: File uploads are limited to 20MB and File types must be docx              </div>
+              <div class="adl-label notes text-danger mt-2" *ngIf="showFileSizeValidation">
+                Files size morethan 20MB
+              </div>
+              <div *ngIf="attachments && attachments.length" class="mt-2">
+                <table class="table table-striped table-condensed">
+                  <thead>
+                    <tr>
+                      <th>File Name</th>
+                      <th>File Size</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of attachments">
+                      <td>{{ item.name }}</td>
+                      <td>{{ (item.size / 1024 / 1024).toFixed(2) + ' MB' }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <span class="upload" *ngIf="progress > 0">
+              {{progress}}%
+            </span>
+          </div>
+          <div class="row mt-4">
+            <div class="col-4"></div>
+            <div>
+              <input
+                type="submit"
+                class="btn btn-success cst-lg-btn"
+                value="Upload"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
